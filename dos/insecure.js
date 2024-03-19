@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/infodisclosure', { useNewUrlParser: 
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
-});
+}); 
 
 // Create a Mongoose model based on the schema
 const User = mongoose.model('User', userSchema);
