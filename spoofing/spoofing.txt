@@ -1,1 +1,7 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The maliciuos user can copy the cookie/session and then pose of an authorized user. 
+The post method with the /sensitive endpoint can end up be executed by a malicious attacker. 
+And since all cookies gets sent with the request, the cookies get sent with the request and this will include the session ID. 
+
+Spoofing in general, violates the CIA property of confidentiality. 

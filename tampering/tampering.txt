@@ -1,0 +1,14 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability
+
+In line 37, the server is assuming that name is a string, and name comes from req.session.user
+which is set in the register end point and it comes from the client. This means it is possible that an attacker can put
+a piece of code snippet in name instead of a string. Essentially, there was an assumption that the user will always 
+enter a string in the name field. How secure.js recitifies this is that it does a regular expression match and then
+changing special characters to the string equivalent, so that it is no longer a script and won't get executed. So for every 
+external input, we have to work with the assumption that it could be attacker controlled and therefore must be sanitized. 
+
+Tampering in general, violates the CIA property of integrity. 
+
+
+
+
