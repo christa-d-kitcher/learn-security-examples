@@ -1,3 +1,10 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+Here, on line 26, user info is using a mongo query to query the databse and the query comes from req.query which is
+an external source. So this means that it is possible that the username could be a query and 
+
 Which CIA property does tampering violate?
+This violates the property of confidentiality and availability. 
+
 What additional security mechanisms can you incorporate?
+Sanitizing the input so that any queries that are sent by the client are checked to make sure they don't contain
+queries that would reveal any sensitive information. 
