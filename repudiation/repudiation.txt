@@ -1,2 +1,12 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+There is no way we are logging and tracking which users are performing which actions. Logging the various user information 
+for each message. For every incoming path, the middleware function creates a log entry which contains the IP address. 
+And then we save that data in a private file which is only accessible to the root admin of this particular service. 
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+Instead of storing the logs on the file system, we  could store the logs in MongoDB since MongoDB has some safeguards. 
+Additionally, we can add more information to the log. Doing some automatic auditing so that certain logs can be
+flagged in our system and then checked later on. 
+
+
+

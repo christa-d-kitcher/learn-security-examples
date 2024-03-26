@@ -1,0 +1,8 @@
+- Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+The vulnerability is that we're not authenticating the user that is able to access that endpoint which directs to the page where one can 
+input the user id and role to update. This means that a malicious user can potentially enter in the user id of an admin and 
+deescalate that admin's role to a user. 
+
+- What additional security mechanisms can you incorporate to prevent such attacks?
+Have checks based on the fact that there is a valid session but then also using 2 factor authentication by using
+custom middleware functions or by sending a token from the server to the client. 

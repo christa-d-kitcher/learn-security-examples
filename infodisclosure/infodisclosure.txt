@@ -1,3 +1,13 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+The vulnerability is that the "username" input currently does not sanitize the input meaning that the user can input
+a regular expression for example, which will give this user the username and password information from the database. 
+In this case, the regular expression brings back the result of the first user's username and password. The secure 
+version prevents the vulnerability by ensuring that the input for username is always a string.
+
+
 Which CIA property does tampering violate?
+It violates confidentiality.
+
+
 What additional security mechanisms can you incorporate?
+Authentication and access control. As well as removing all console logs, as well as storing the password using hashing with some kind of algorithm. 

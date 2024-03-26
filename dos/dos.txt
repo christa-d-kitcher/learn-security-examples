@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+The vulnerability is that we're doing a query based on id and that id is coming from potentially an attacker controlled input which is not sanitized. 
+While it's preventing noSQL attacks, we still need to do error handling and sanitize the input in order to prevent a 
+denial of service attack.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+Adding some error handling such as adding a try catch block on the query that finds the user by the id. 
+Also, we can sanitize the data that is input and used for the query. We should also limit any requests that comes into the server for certain periods of time.
+This can be done by using some rate limiting middleware. 
